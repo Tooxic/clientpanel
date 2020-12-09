@@ -27,9 +27,6 @@ const db = mongoose.connection;
 checkActivationsReset(900000);
 NotActivatedRemover(86400000);
 
-//Sockets
-require('./socket/messages')(db);
-
 // EJS
 app.use(expressLayouts);
 app.set('view engine', 'ejs');

@@ -15,11 +15,11 @@ module.exports = async function activationEmail(email, account, callback) {
   var conf = crypto.randomBytes(10).toString('hex');
   // send mail with defined transport object
   await transporter.sendMail({
-    from: '"TTE Chat" <ttechat@sweplox.se>', // sender address
+    from: '"Sweplox hosting" <no-reply@sweplox.se>', // sender address
     to: `${email}`, // list of receivers
     subject: `Activation email for ${account}`, // Subject line
     text: `Activation email for ${account}`, // plain text body
-    html: `Activation email for ${account}, https://ttechat.se/activation/${conf}`, // html body
+    html: `Activation email for ${account}, https://client.sweplox.net/activation/${conf}`, // html body
   });
   callback({
     conf,

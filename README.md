@@ -1,42 +1,14 @@
-# TTEchat
+# Client panel
 
-This is a project for our school. Please give us a A+, we spent a lot of time on this :(
+<3 javascript
 
 # Introduction
 
-TTEchat will be better than discord.
+Client panel for Sweplox Hosting
 
 # TODO
 
-- [x] Create something
-- [x] MongoDB
-- [x] Login/Register system
-- [x] Create rooms/chat-rooms
-- [X] ~~Store chat's and display them on the rooms~~ _won't make because of security_
-- [ ] ~~Add friends~~ _No reason to_
-- [ ] ~~Private rooms for friends and user~~ \*No reason to\*\*
-- [ ] Voice Chat
-- [ ] Video Chat
-- [x] Add Activations Email
-- [x] Add password reset
-- [X] Profile picture
-- [ ] Send images in chat
-
-## Configure
-
-```js
-SESSION_SECRET=
-PORT=3000
-PORTSOCKET=4000
-MONGODB_NAV=
-SMTP_HOST=
-SMTP_PORT=
-SSL=True
-EMAIL=
-EMAIL_PASSWORD=
-EMAIL_SENDER=
-```
-
-## Running
-
-Depending on the root you are in. You want to navigate to /src/ and use this command: `node server` _depending on your root ofc_
+- [] Knappar för att skapa server, ändra ram, ändra disk osv
+- [] Göra så att arc-sw.js finns på client.sweplox.net/arc-sw.js
+- [] Göra så att man får coins om man är inne på "earn coins" sidan
+- [] Reklam (Kanske)

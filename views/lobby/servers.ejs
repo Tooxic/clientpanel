@@ -1,7 +1,6 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 offset-md-3 col-sm-12">
-      <h1 class="text-center"><%= server.name %></h1>
       <div id="chat">
         <p id="username" class="form-control"><%= users.username %></p>
 
@@ -10,6 +9,7 @@
         <p id="username" class="form-control">Servers: <%= users.servers_used %>/<%= users.servers %></p>
         <p id="username" class="form-control">Databases: <%= users.databases_used %>/<%= users.databases %></p>
         <p id="username" class="form-control">Extra Ports: <%= users.ports_used %>/<%= users.ports %></p>
+        <p id="username" class="form-control">Can create servers (Beta): <%= users.beta_access %></p>
         <br />
         <div id="status"></div>
         <div id="chat">

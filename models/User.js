@@ -69,6 +69,10 @@ const UserSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  beta_access: {
+    type: Number,
+    default: 'No',
+  },
 });
 
 const User = mongoose.model('User', UserSchema);

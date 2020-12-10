@@ -70,7 +70,7 @@ const UserSchema = new mongoose.Schema({
     default: 0,
   },
   beta_access: {
-    type: Number,
+    type: String,
     default: 'No',
   },
 });

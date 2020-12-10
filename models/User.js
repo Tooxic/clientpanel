@@ -39,7 +39,35 @@ const UserSchema = new mongoose.Schema({
   },
   servers: {
     type: Number,
-    default: 2048,
+    default: 1,
+  },
+  databases: {
+    type: Number,
+    default: 2,
+  },
+  ports: {
+    type: Number,
+    default: 5,
+  },
+  ram_used: {
+    type: Number,
+    default: 0,
+  },
+  disk_used: {
+    type: Number,
+    default: 0,
+  },
+  servers_used: {
+    type: Number,
+    default: 0,
+  },
+  databases_used: {
+    type: Number,
+    default: 0,
+  },
+  ports_used: {
+    type: Number,
+    default: 0,
   },
 });
 

@@ -303,18 +303,4 @@ router.get('/logout', (req, res) => {
   res.redirect('/login');
 });
 
-// Logout
-router.get('/logout', (req, res) => {
-  req.logout();
-  req.flash('success_msg', 'You are logged out');
-  res.redirect('/login');
-});
-
-// Logout
-router.get('/arc-sw.js', (req, res) => {
-  req.logout();
-  req.flash('success_msg', 'You are logged out');
-  res.redirect('/arc-sw.js');
-});
-
 module.exports = router;

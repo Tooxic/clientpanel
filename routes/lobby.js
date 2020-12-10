@@ -22,7 +22,7 @@ router.get("/servers", ensureAuthenticated, async (req, res) => {
 router.get("/earn", ensureAuthenticated, async (req, res) => {
   res.render(
     "./lobby/earn",
-    { users: req.user, server: await Server.find() },
+    { earnings: req.user, server: await Server.find() },
   );
 });
 

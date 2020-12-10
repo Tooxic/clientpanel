@@ -10,6 +10,13 @@
         <p id="username" class="form-control">Databases: <%= users.databases_used %>/<%= users.databases %></p>
         <p id="username" class="form-control">Extra Ports: <%= users.ports_used %>/<%= users.ports %></p>
         <p id="username" class="form-control">Can create servers (Beta): <%= users.beta_access %></p>
+
+        <form>
+          <label for="fname">Server name:</label><br>
+          <input type="text" id="servername" name="servername" value=""><br>
+          <label for="lname">Last name:</label><br>
+          <input type="text" id="ram_amount" name="ram_amount" value="">
+        </form>
         <br />
         <div id="status"></div>
         <div id="chat">
@@ -21,6 +28,6 @@
   </div>
 
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
-  <script defer src="../socket.js"></script>
   <link rel="stylesheet" href="../style/style.css" />
 </div>
+

@@ -11,6 +11,6 @@ const earningsSchema = new mongoose.Schema({
   },
 });
 
-const Server = mongoose.model("Earnings", serverSchema);
+const Earnings = mongoose.model("Earnings", earningsSchema);
 
 module.exports = Earnings;

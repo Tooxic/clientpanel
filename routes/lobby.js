@@ -12,7 +12,10 @@ router.get("/", ensureAuthenticated, (req, res) => {
 router.get("/servers", ensureAuthenticated, async (req, res) => {
   res.render(
     "./lobby/servers",
-    { users: req.user, server: await Server.find() },
+    { 
+      users: req.user, 
+      server: await Server.find() 
+    },
   );
 });
 

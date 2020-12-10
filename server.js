@@ -72,7 +72,7 @@ db.on('error', (error) => Logger.warn(error));
 //On open [MongoDB]
 db.once('open', () => Logger.normal('Connected to database'));
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 1132;
 
 app.listen(PORT, Logger.normal(`Server started on port ${PORT}`));
 

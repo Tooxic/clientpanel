@@ -5,7 +5,11 @@
       <div id="chat">
         <p id="username" class="form-control"><%= users.username %></p>
 
-        <p id="username" class="form-control"><%= users.ram %></p>
+        <p id="username" class="form-control">Ram: <%= users.ram_used %>/<%= users.ram %>MB</p>
+        <p id="username" class="form-control">Disk: <%= users.disk_used %>/<%= users.disk %>MB</p>
+        <p id="username" class="form-control">Servers: <%= users.servers_used %>/<%= users.servers %></p>
+        <p id="username" class="form-control">Databases: <%= users.databases_used %>/<%= users.databases %></p>
+        <p id="username" class="form-control">Extra Ports: <%= users.ports_used %>/<%= users.ports %></p>
         <br />
         <div id="status"></div>
         <div id="chat">

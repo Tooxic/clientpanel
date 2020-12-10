@@ -1,7 +1,8 @@
 const request = require("request");
 
-let front = "https://game.panel.sweplox.net/";
-let Auth = "H0k6u1a3XG5wyGguecGAlEbNiqKPsrII5GHHjqBJWdxSRnYL";
+let front = "https://api.cloudflare.com/client/v4/";
+let ZONE_ID = process.env.CLOUD_ZONE_ID;
+let Auth = process.env.CLOUD_AUTH_TOKEN
 /**
  * 
  * @param {String} type 
@@ -11,19 +12,20 @@ let Auth = "H0k6u1a3XG5wyGguecGAlEbNiqKPsrII5GHHjqBJWdxSRnYL";
  * @param {Number} priority 
  * @param {Boolean} proxied 
  */
-function createUser(email, username, first_name, last_name) {
-    request(front+"api/application/users", {
+function createDNS(type, name, content, ttl, priority, proxied) {
+    request(front+"zones/"+ZONE_ID+"/dns_records", {
         method: "POST",
         headers: {
-            "Accept": "application/json",
             "Authorization": "Bearer " + Auth,
             "Content-Type": "application/json"
         },
         body: {
-            email: "example1110@example.com",
-            username: "exampleuser1111",
-            first_name: "Example",
-            last_name: "User",
+            type: type,
+            name: name,
+            content: content,
+            ttl: ttl,
+            priority: priority,
+            proxied: proxied,
         },
         json: true
 
@@ -31,8 +33,6 @@ function createUser(email, username, first_name, last_name) {
         console.log(body)
     })
 }
-
-createDNS()
 
 module.exports = {
     createDNS

@@ -29,6 +29,18 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  ram: {
+    type: Number,
+    default: 2048,
+  },
+  disk: {
+    type: Number,
+    default: 2048,
+  },
+  servers: {
+    type: Number,
+    default: 2048,
+  },
 });
 
 const User = mongoose.model('User', UserSchema);

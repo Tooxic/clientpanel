@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const earningsSchema = new mongoose.Schema({
+const billingSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
@@ -11,6 +11,6 @@ const earningsSchema = new mongoose.Schema({
   },
 });
 
-const Earnings = mongoose.model("Earnings", earningsSchema);
+const Billing = mongoose.model("Billing", billingsSchema);
 
-module.exports = Earnings;
+module.exports = Billing;

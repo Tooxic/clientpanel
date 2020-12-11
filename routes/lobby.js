@@ -26,9 +26,16 @@ router.get("/earn", ensureAuthenticated, async (req, res) => {
   );
 });
 
-router.get("/videochat", ensureAuthenticated, async (req, res) => {
+router.get("/shop", ensureAuthenticated, async (req, res) => {
   res.render(
-    "./lobby/videochat",
+    "./lobby/shop",
+    { users: req.user, server: await Server.find() },
+  );
+});
+
+router.get("/billing", ensureAuthenticated, async (req, res) => {
+  res.render(
+    "./lobby/billing",
     { users: req.user, server: await Server.find() },
   );
 });

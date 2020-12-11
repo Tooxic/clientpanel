@@ -12,10 +12,18 @@
         <p id="username" class="form-control">Can create servers (Beta): <%= users.beta_access %></p>
 
         <form>
-          <label for="fname">Server name:</label><br>
-          <input type="text" id="servername" name="servername" value=""><br>
-          <label for="lname">Last name:</label><br>
-          <input type="text" id="ram_amount" name="ram_amount" value="">
+          <label for="servername">Server name:</label><br>
+          <input type="text" id="server_name" name="servername" value=""><br>
+          <label for="country">CPU cores:</label><br> 
+          <input type="text" id="cpu_cores" name="cpucores" value="1" readonly><br><br>
+          <label for="lname">RAM:</label><br>
+          <input type="text" id="ram_amount" name="ramamount" value=""><br><br>
+          <label for="disk">Disk:</label><br> 
+          <input type="text" id="disk" name="disk" value="5000" readonly><br><br>
+          <label for="databases">Databases:</label><br> 
+          <input type="text" id="datbases" name="databases" value="1" readonly><br><br>
+          <label for="country">Extra ports:</label><br> 
+          <input type="text" id="extra_ports" name="extraports" value="1" readonly><br><br>
         </form>
         <br />
         <div id="status"></div>

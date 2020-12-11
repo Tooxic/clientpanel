@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
+const Earnings = require('../models/Earnings');
 const { forwardAuthenticated, ensureAuthenticated } = require('../config/auth');
 
 router.get('/edit', ensureAuthenticated, (req, res) => {

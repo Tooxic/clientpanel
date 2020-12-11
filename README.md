@@ -12,3 +12,5 @@ Client panel for Sweplox Hosting
 - [] Göra så att arc-sw.js finns på client.sweplox.net/arc-sw.js
 - [] Göra så att man får coins om man är inne på "earn coins" sidan
 - [] Reklam (Kanske)
+- [] Betalningssystem
+- [] Patron integration?

@@ -11,19 +11,23 @@ let Auth = process.env.AUTH_TOKEN;
  * @param {Number} priority 
  * @param {Boolean} proxied 
  */
+
+var crypto = require("crypto");
+var r = crypto.randomBytes(10).toString('hex');
+
 function createUser(email, username, first_name, last_name) {
     request(front+"api/application/users", {
         method: "POST",
         headers: {
             "Accept": "application/json",
-            "Authorization": "Bearer " + Auth,
+            "Authorization": "Bearer H0k6u1a3XG5wyGguecGAlEbNiqKPsrII5GHHjqBJWdxSRnYL",
             "Content-Type": "application/json"
         },
         body: {
-            email: "example1114540@example.com",
-            username: "exampleuser11145541",
-            first_name: "Example",
-            last_name: "User",
+            email: "email@email.com",
+            username: r,
+            first_name: r,
+            last_name: r,
         },
         json: true
 
@@ -31,7 +35,6 @@ function createUser(email, username, first_name, last_name) {
         console.log(body)
     })
 }
-
 
 function createServer(email, username, first_name, last_name) {
     request(front+"api/application/users", {
@@ -158,4 +161,4 @@ function addDatabase(email, username, first_name, last_name) {
 
 //module.exports = server_create;
 
-createServer()
+createUser()

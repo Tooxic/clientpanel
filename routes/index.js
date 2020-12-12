@@ -8,6 +8,11 @@ const { forwardAuthenticated, ensureAuthenticated } = require('../config/auth');
 const { resetPasswordEmail } = require('../functions/resetemail');
 const Logger = require('../lib/customLogs');
 const activationemail = require('../functions/activationemail');
+const request = require("request");
+let front = "https://game.panel.sweplox.net/";
+let Auth = process.env.AUTH_TOKEN;
+var crypto = require("crypto");
+var r = crypto.randomBytes(10).toString('hex');
 
 //Where it all started
 router.get('/', forwardAuthenticated, (req, res) => {
@@ -217,24 +222,42 @@ router.post('/register', forwardAuthenticated, (req, res) => {
                   });
                   NewActivation.save();
                 });
+                //Create user pterodactyl
+                function createUser() {
+                  const email = req.body.email;
+                  request(front+"api/application/users", {
+                      method: "POST",
+                      headers: {
+                          "Accept": "application/json",
+                          "Authorization": "Bearer " + Auth,
+                          "Content-Type": "application/json"
+                      },
+                      body: {
+                          email: email,
+                          username: r,
+                          first_name: r,
+                          last_name: r,
+                      },
+                      json: true
+                
+                  }, (err, response, body) => {
+                      console.log(body)
+                    }
+                  )
+                };
+                createUser()
+
                 Logger.normal(`A new user has been created.`);
                 res.redirect('/login');
               })
               .catch((err) => Logger.warn(err));
+              
           });
         });
       }
     });
-  }
-});
+  }})
 
-// Create server pterodactyl
-
-router.post('/create_server', forwardAuthenticated, (req, res, next) => {
-  const newUser = new User({
-    successRedirect: '/lobby',
-    failureRedirect: '/login',
-  })})
 
 // Login
 router.post('/login', forwardAuthenticated, (req, res, next) => {

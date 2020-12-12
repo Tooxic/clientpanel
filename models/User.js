@@ -79,7 +79,7 @@ const UserSchema = new mongoose.Schema({
   },
   pterodactyl_user_id: {
     type: Number,
-    required: true,
+    default: '',
   },
 });
 

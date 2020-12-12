@@ -20,8 +20,8 @@ function createUser(email, username, first_name, last_name) {
             "Content-Type": "application/json"
         },
         body: {
-            email: "example1110@example.com",
-            username: "exampleuser1111",
+            email: "example1114540@example.com",
+            username: "exampleuser11145541",
             first_name: "Example",
             last_name: "User",
         },
@@ -31,6 +31,7 @@ function createUser(email, username, first_name, last_name) {
         console.log(body)
     })
 }
+
 
 function createServer(email, username, first_name, last_name) {
     request(front+"api/application/users", {
@@ -137,8 +138,4 @@ function addDatabase(email, username, first_name, last_name) {
     })
 }
 
-createDNS()
-
-module.exports = {
-    createDNS
-}
+module.exports = userCreate;

@@ -29,6 +29,10 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  cpu_cores: {
+    type: Number,
+    default: 0.7,
+  },
   ram: {
     type: Number,
     default: 2048,

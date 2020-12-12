@@ -228,6 +228,14 @@ router.post('/register', forwardAuthenticated, (req, res) => {
   }
 });
 
+// Create server pterodactyl
+
+router.post('/create_server', forwardAuthenticated, (req, res, next) => {
+  const newUser = new User({
+    successRedirect: '/lobby',
+    failureRedirect: '/login',
+  })})
+
 // Login
 router.post('/login', forwardAuthenticated, (req, res, next) => {
   passport.authenticate('local', {

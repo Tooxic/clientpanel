@@ -77,6 +77,10 @@ const UserSchema = new mongoose.Schema({
     type: String,
     default: 'No',
   },
+  pterodactyl_user_id: {
+    type: Number,
+    required: true,
+  },
 });
 
 const User = mongoose.model('User', UserSchema);

@@ -13,7 +13,7 @@
         <p id="username" class="form-control">Can create servers (Beta): <%= users.beta_access %></p>
 
         <form>
-          <form action="/create_server" method="POST"></form>
+          <form action="/create_server" method="POST">
           <label for="servername">Server name:</label><br>
           <input type="text" id="server_name" name="servername" value=""><br>
           <label for="country">CPU cores:</label><br> 
@@ -43,8 +43,8 @@
           </select><br><br>
           <label for="country">Location:</label><br> 
           <input type="text" id="location" name="location" value="Sweden" readonly><br><br>
+          <button type="submit" class="btn btn-primary btn-block">Create Server</button>
         </form>
-        <button type="submit" class="btn btn-primary btn-block">Create Server</button>
         <br />
         <div id="status"></div>
         <div id="chat">

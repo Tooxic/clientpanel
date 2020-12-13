@@ -1,4 +1,5 @@
 const request = require("request");
+const User = require('../models/User');
 
 let front = "https://game.panel.sweplox.net/";
 let Auth = process.env.AUTH_TOKEN;
@@ -15,28 +16,8 @@ let Auth = process.env.AUTH_TOKEN;
 var crypto = require("crypto");
 var r = crypto.randomBytes(10).toString('hex');
 
-function createUser(email, username, first_name, last_name) {
-    request(front+"api/application/users", {
-        method: "POST",
-        headers: {
-            "Accept": "application/json",
-            "Authorization": "Bearer H0k6u1a3XG5wyGguecGAlEbNiqKPsrII5GHHjqBJWdxSRnYL",
-            "Content-Type": "application/json"
-        },
-        body: {
-            email: "email@email.com",
-            username: r,
-            first_name: r,
-            last_name: r,
-        },
-        json: true
-
-    }, (err, response, body) => {
-        console.log(body)
-    })
-}
-
 function createServer(email, username, first_name, last_name) {
+    User.findOne({ pterodactyl_user_id: pterodactyl_user })
     request(front+"api/application/users", {
         method: "POST",
         headers: {
@@ -46,7 +27,7 @@ function createServer(email, username, first_name, last_name) {
         },
         body: {
             name: "Building",
-            user: 1,
+            user: pterodactyl_user,
             egg: 1,
             docker_image: "quay.io/pterodactyl/core:java",
             startup: "java -Xms128M -Xmx128M -jar server.jar",
@@ -159,6 +140,6 @@ function addDatabase(email, username, first_name, last_name) {
     })
 }
 
-//module.exports = server_create;
+module.exports = server_create;
 
 createUser()

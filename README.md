@@ -8,6 +8,7 @@ Client panel for Sweplox Hosting
 
 # TODO
 
+- [] Man kan ej logga in om man skriver sin mail med stor bokstav
 - [X] Skapa användare när man loggar in
 - [] Spara userid från pterodactyl i mongodb tablet users
 - [] Fixa api function för att skapa server

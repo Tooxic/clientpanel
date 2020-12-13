@@ -35,7 +35,7 @@ const UserSchema = new mongoose.Schema({
   },
   ram: {
     type: Number,
-    default: 2048,
+    default: 1024,
   },
   disk: {
     type: Number,

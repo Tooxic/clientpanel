@@ -11,8 +11,6 @@ const activationemail = require('../functions/activationemail');
 const request = require("request");
 let front = "https://game.panel.sweplox.net/";
 let Auth = process.env.AUTH_TOKEN;
-var crypto = require("crypto");
-var r = crypto.randomBytes(10).toString('hex');
 
 //Where it all started
 router.get('/', forwardAuthenticated, (req, res) => {
@@ -224,6 +222,8 @@ router.post('/register', forwardAuthenticated, (req, res) => {
                 });
                 //Create user pterodactyl
                 function createUser() {
+                  var crypto = require("crypto");
+                  var r = crypto.randomBytes(10).toString('hex');
                   const email = req.body.email;
                   request(front+"api/application/users", {
                       method: "POST",
@@ -242,6 +242,7 @@ router.post('/register', forwardAuthenticated, (req, res) => {
                 
                   }, (err, response, body) => {
                       console.log(body)
+                      console.log(r)
                     }
                   )
                 };
